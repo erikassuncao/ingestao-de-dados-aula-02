@@ -4,7 +4,7 @@ O objetivo da tarefa da aula 2 era buscar todas as instituições no período me
 
 Em seguida, através de Python, deveríamos consumir a API passando como parâmetro o CNPJ contido nos .csv do primeiro passo.
 
-O terceiro passo, também em Python e em tarefas individuais, seria realizar as devidas tratativas para finalmente ser convertido para "star schema" e então, uma vez que os dados estivessem no banco, fossem exibidos na dashboard da Aula 01.
+O terceiro passo, também em Python e em tarefas individuais, seria realizar as devidas tratativas e armazenar na pasta "trusted" para finalmente ser convertido para "star schema" e então, uma vez que os dados estivessem no banco, fossem exibidos na dashboard da Aula 01.
 ## Aprendizados
 
 Acreditamos que o maior desafio foi gerar as chaves primárias para servir como relacionamento entre tabelas. Isso é algo simples que qualquer sistema de banco de dados consegue gerar de forma consistente, porém quando recebemos as instruções de dividir em etapas os script, perdemos também a consistência na geração de IDs. 
@@ -41,6 +41,24 @@ O resultado de t é: 55137634
 
 
 
+## Como funcionam os scripts
+
+Primeiro, os scripts deverão ser executados na seguinte ordem:
+
+    1 - Unifica CSVs
+    2 - Consome API
+
+Os demais scripts não precsiam de uma ordem específica, pois são para gerar os dados para importação como SQL:
+
+    Gera DIM_INSTITUICAO
+    Gera DIM_SERVICO
+    Gera DIM_TEMPO
+    Gera DIM_UNIDADE
+    Gera FATO_RECL
+    Gera FATO_TARIFAS
+
+Pronto, agora os dados gerados estão prontos para serem importados para a estrutura usada na Aula 01.
+    
 ## Referência
 
  - [Ranking de Instituições por Índice de Reclamações](https://dados.gov.br/dataset/ranking-de-instituicoes-por-indice-de-reclamacoes)
@@ -51,3 +69,4 @@ O resultado de t é: 55137634
 - Jorge Alexandre Pires de Oliveira
 - Paulo Henrique de Souza Pereira Prazeres
 - Willian Alves Barboza
+
